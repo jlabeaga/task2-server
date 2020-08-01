@@ -29,7 +29,6 @@
 - DELETE /api/tasks/:id
 
 - GET/POST/PATCH/DELETE /api/actions, /api/actions/:id
-- GET/POST/PATCH/DELETE /api/tasklists, /api/tasklists/:id
 - GET/POST/PATCH/DELETE /api/resources, /api/resources/:id
 - GET/POST/PATCH/DELETE /api/todos, /api/todos/:id
 
@@ -44,6 +43,7 @@
 - POST /api/admin/groups/:id/user/:id
 - DELETE /api/admin/groups/:id/user/:id
 
+- GET/POST/PATCH/DELETE /api/admin/tasklists, /api/admin/tasklists/:id
 - POST /api/admin/tasklists/:id/group/:id
 - DELETE /api/admin/tasklists/:id/group/:id
 
