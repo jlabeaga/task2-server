@@ -39,6 +39,8 @@
 
 ### admin
 
+- GET/POST/PATCH/DELETE /api/admin/users, /api/admin/users/:id
+
 - GET/POST/PATCH/DELETE /api/admin/groups, /api/admin/groups/:id
 - POST /api/admin/groups/:id/user/:id
 - DELETE /api/admin/groups/:id/user/:id
