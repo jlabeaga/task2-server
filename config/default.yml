@@ -1,0 +1,11 @@
+server:
+  port: 3000
+
+db:
+  type: 'postgres'
+  port: 5432
+  database: 'task2'
+  logging: false
+
+jwt:
+  expiresIn: 31536000
