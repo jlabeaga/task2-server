@@ -35,8 +35,8 @@
 
 ### utility
 
-GET /api/object/:entity/:id
-GET/POST/PATCH/DELETE /api/user/:usedId/todos/:todoId
+- GET /api/object/:entity/:id
+- GET/POST/PATCH/DELETE /api/user/:usedId/todos/:todoId
 
 ### admin
 
@@ -75,28 +75,28 @@ GET/POST/PATCH/DELETE /api/user/:usedId/todos/:todoId
 
 # Pages
 
-Auth: SignUp
-Auth: SignIn
+- Auth: SignUp
+- Auth: SignIn
 
-User: Home - Latest pending tasks
-=> filter by Tasklist, User, Status, Date
-=> find typeahead
-User: Tasklists
-=> find typeahead
-User: Tasklist
-=> filter tasks by status sort by date
-=> find typeahead
-=> popup: add Group
-=> popup: add Task
-User: Task
-=> filter actions by contributor sort by date
-=> navigate: add/edit Action
-User: Action
-User: Resource
+- User: Home - Latest pending tasks
+  => filter by Tasklist, User, Status, Date
+  => find typeahead
+- User: Tasklists
+  => find typeahead
+- User: Tasklist
+  => filter tasks by status sort by date
+  => find typeahead
+  => popup: add Group
+  => popup: add Task
+- User: Task
+  => filter actions by contributor sort by date
+  => navigate: add/edit Action
+- User: Action
+- User: Resource
 
-Admin: Groups => find typeahead
-Admin: Group
-Admin: Users => find typeahead
-Admin: User
-Admin: Tasklists => find typeahead
-Admin: Tasklist
+- Admin: Groups => find typeahead
+- Admin: Group
+- Admin: Users => find typeahead
+- Admin: User
+- Admin: Tasklists => find typeahead
+- Admin: Tasklist
