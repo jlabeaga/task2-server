@@ -13,7 +13,6 @@ export class Group extends BaseEntity {
   id: number;
 
   @Column()
-  @IsNotEmpty()
   code: string;
 
   @Column()

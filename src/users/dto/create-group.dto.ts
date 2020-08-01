@@ -6,8 +6,6 @@ export class CreateGroupDto {
   @MinLength(4)
   name: string;
 
-  @IsNotEmpty()
-  @MinLength(3)
   code: string;
 
   description: string;
