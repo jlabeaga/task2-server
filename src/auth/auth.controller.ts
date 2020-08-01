@@ -22,14 +22,14 @@ export class AuthController {
     return this.authService.signIn(authCredentialsDto);
   }
 
-  @Post('/test')
-  @UseGuards(AuthGuard())
+  // @Post('/test')
+  // @UseGuards(AuthGuard())
   async test(@GetUser() user) {
     console.log("test user", user);
     return user;
   }
 
-  @Post('/test2')
+  // @Post('/test2')
   async test2(@Req() request: Request) {
     console.log("test2 request", request);
     return request;
