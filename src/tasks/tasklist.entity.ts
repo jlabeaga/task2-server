@@ -1,4 +1,4 @@
-import { BaseEntity, PrimaryGeneratedColumn, Column, Entity, Unique, ManyToMany, OneToMany, JoinTable } from 'typeorm';
+import { BaseEntity, PrimaryGeneratedColumn, Column, Entity, Unique, ManyToMany, OneToMany, JoinTable, OneToOne } from 'typeorm';
 import { IsNotEmpty } from 'class-validator';
 import { Task } from './task.entity';
 import { User } from '../users/user.entity';
@@ -24,5 +24,8 @@ export class Tasklist extends BaseEntity {
   @ManyToMany(type => Group, group => group.tasklists)
   @JoinTable()
   participants: Group[];
+
+  @OneToOne(type => Group)
+  defaultGroup: Group;
 
 }
