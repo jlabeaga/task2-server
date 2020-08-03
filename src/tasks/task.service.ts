@@ -20,9 +20,7 @@ export class TaskService {
   }
 
   async findTasksForUser(userId: number): Promise<Task[]> {
-    const user = new User();
-    user.id = userId;
-    return this.taskRepository.find({ owner: user });
+    return this.taskRepository.findTasksForUser(userId);
   }
 
   async create(createTaskDto: CreateTaskDto): Promise<Task> {

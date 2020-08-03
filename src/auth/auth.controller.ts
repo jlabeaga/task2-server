@@ -28,8 +28,8 @@ export class AuthController {
     return this.authService.signIn(authCredentialsDto);
   }
 
-  // @Post('/test')
-  // @UseGuards(AuthGuard())
+  @Post('/test-auth')
+  @UseGuards(AuthGuard())
   async test(@GetUser() user) {
     console.log("test user", user);
     return user;
