@@ -3,7 +3,7 @@ import { IsNotEmpty } from 'class-validator';
 import { Tasklist } from './tasklist.entity';
 
 @Entity()
-export class Task extends BaseEntity {
+export class Resource extends BaseEntity {
 
   @PrimaryGeneratedColumn()
   id: number;

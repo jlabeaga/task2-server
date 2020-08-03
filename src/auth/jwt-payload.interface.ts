@@ -1,4 +1,4 @@
-import { Role } from '../users/role.enum';
+import { Role } from '../tasks/role.enum';
 
 export interface JwtPayload {
   id: number;

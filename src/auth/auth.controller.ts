@@ -1,18 +1,24 @@
-import { Controller, Post, Body, ValidationPipe, UseGuards, Req } from '@nestjs/common';
+import { Controller, Post, Body, ValidationPipe, UseGuards, Req, UseInterceptors, ClassSerializerInterceptor } from '@nestjs/common';
+import {
+  ApiTags,
+  ApiOperation
+} from '@nestjs/swagger';
 import { AuthCredentialsDto } from './dto/auth-credentials.dto';
 import { AuthService } from './auth.service';
 import { AuthGuard } from '@nestjs/passport';
 import { GetUser } from './get-user.decorator';
 import { Request } from 'express';
+import { User } from '../tasks/user.entity';
 
+@ApiTags('auth')
 @Controller('auth')
 export class AuthController {
 
   constructor(private authService: AuthService) { }
 
   @Post('/signup')
-  async signUp(@Body(ValidationPipe) authCredentialsDto: AuthCredentialsDto): Promise<void> {
-    // console.log("credentials", authCredentialsDto);
+  @UseInterceptors(ClassSerializerInterceptor)
+  async signUp(@Body(ValidationPipe) authCredentialsDto: AuthCredentialsDto): Promise<User> {
     return this.authService.signUp(authCredentialsDto);
   }
 

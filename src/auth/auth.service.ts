@@ -1,25 +1,21 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { UserRepository } from '../users/user.repository';
+import { UserRepository } from '../tasks/user.repository';
 import { InjectRepository } from '@nestjs/typeorm';
 import { AuthCredentialsDto } from './dto/auth-credentials.dto';
 import { JwtService } from '@nestjs/jwt';
 import { JwtPayload } from './jwt-payload.interface';
-import { User } from '../users/user.entity';
-import { GroupRepository } from '../users/group.repository';
-import { Group } from '../users/group.entity';
+import { User } from '../tasks/user.entity';
 
 @Injectable()
 export class AuthService {
 
   constructor(
     @InjectRepository(UserRepository) private userRepository: UserRepository,
-    @InjectRepository(GroupRepository) private groupRepository: GroupRepository,
     private jwtService: JwtService
   ) { }
 
-  async signUp(authCredentialsDto: AuthCredentialsDto): Promise<void> {
-    const everybody = await this.groupRepository.getEverybodyGroup();
-    return this.userRepository.signUp(authCredentialsDto, [everybody]);
+  async signUp(authCredentialsDto: AuthCredentialsDto): Promise<User> {
+    return this.userRepository.signUp(authCredentialsDto);
   }
 
   async signIn(authCredentialsDto: AuthCredentialsDto): Promise<{ token: string }> {

@@ -1,17 +1,16 @@
 import { Module } from '@nestjs/common';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
-import { UserRepository } from '../users/user.repository';
+import { UserRepository } from '../tasks/user.repository';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy } from './jwt.strategy';
 import * as config from 'config';
-import { GroupRepository } from '../users/group.repository';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([UserRepository, GroupRepository]),
+    TypeOrmModule.forFeature([UserRepository]),
     PassportModule.register({
       defaultStrategy: 'jwt'
     }),
@@ -29,7 +28,8 @@ import { GroupRepository } from '../users/group.repository';
   ],
   exports: [
     JwtStrategy,
-    PassportModule
+    PassportModule,
+    JwtModule
   ]
 })
 export class AuthModule { }

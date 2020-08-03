@@ -1,12 +1,17 @@
 import { IsNotEmpty, MinLength } from "class-validator";
 
-export class CreateGroupDto {
+export class CreateTaskDto {
 
   @IsNotEmpty()
   @MinLength(4)
   name: string;
 
-  code: string;
-
   description: string;
+
+  tasklistId: number;
+
+  ownerId: number;
+
+  hoursEstimated: number;
+
 }

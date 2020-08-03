@@ -1,10 +1,10 @@
 import { BaseEntity, PrimaryGeneratedColumn, Column, Entity, Unique, ManyToMany, ManyToOne, OneToMany } from 'typeorm';
 import { IsNotEmpty } from 'class-validator';
-import { User } from '../users/user.entity';
 import { Tasklist } from './tasklist.entity';
 import { Action } from './action.entity';
 import { TaskStatus } from './task-status.enum';
 import { TaskResult } from './task-result.enum';
+import { User } from './user.entity';
 
 @Entity()
 export class Task extends BaseEntity {

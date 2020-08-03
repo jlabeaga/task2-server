@@ -8,7 +8,6 @@
 # Data model
 
 - User
-- Group
 - Tasklist
 - Task
 - Action
@@ -39,15 +38,11 @@
 
 ### admin
 
-- GET/POST/PATCH/DELETE /api/admin/users, /api/admin/users/:id
-
-- GET/POST/PATCH/DELETE /api/admin/groups, /api/admin/groups/:id
-- POST /api/admin/groups/:id/user/:id
-- DELETE /api/admin/groups/:id/user/:id
-
 - GET/POST/PATCH/DELETE /api/admin/tasklists, /api/admin/tasklists/:id
-- POST /api/admin/tasklists/:id/group/:id
-- DELETE /api/admin/tasklists/:id/group/:id
+
+- GET/POST/PATCH/DELETE /api/admin/users, /api/admin/users/:id
+- POST /api/admin/users/:userId/tasklist/:tasklistId
+- DELETE /api/admin/users/:userId/tasklist/:tasklistId
 
 # Menus:
 
@@ -62,11 +57,10 @@
 - Home
 - Tasklists
 - Pinned: List of objects: Tasklist, Task, Action, Resource, etc
-- Profile: Groups, Tasklists, Requests for joining a group (POST /group/:groupId/user/:userId WITH ADMIN ROLE)
+- Profile: Tasklists, Requests for joining a tasklist (POST /users/:userId/tasklist/:tasklistId WITH ADMIN ROLE)
 
 ## Admin:
 
-- Groups
 - Users
 - Tasklists
 
@@ -88,7 +82,7 @@
 - User: Tasklist
   => filter tasks by status sort by date
   => find typeahead
-  => popup: add Group
+  => popup: add User
   => popup: add Task
 - User: Task
   => filter actions by contributor sort by date
@@ -96,8 +90,6 @@
 - User: Action
 - User: Resource
 
-- Admin: Groups => find typeahead
-- Admin: Group
 - Admin: Users => find typeahead
 - Admin: User
 - Admin: Tasklists => find typeahead
